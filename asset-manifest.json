@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/camping-poi/static/css/main.0fed2176.chunk.css",
+    "main.js": "/camping-poi/static/js/main.dfdb54c5.chunk.js",
+    "main.js.map": "/camping-poi/static/js/main.dfdb54c5.chunk.js.map",
+    "runtime-main.js": "/camping-poi/static/js/runtime-main.a3ae130d.js",
+    "runtime-main.js.map": "/camping-poi/static/js/runtime-main.a3ae130d.js.map",
+    "static/css/2.13d08433.chunk.css": "/camping-poi/static/css/2.13d08433.chunk.css",
+    "static/js/2.52232f42.chunk.js": "/camping-poi/static/js/2.52232f42.chunk.js",
+    "static/js/2.52232f42.chunk.js.map": "/camping-poi/static/js/2.52232f42.chunk.js.map",
+    "index.html": "/camping-poi/index.html",
+    "precache-manifest.8da01d13f5bb980ba7ef9dd1d8919b61.js": "/camping-poi/precache-manifest.8da01d13f5bb980ba7ef9dd1d8919b61.js",
+    "service-worker.js": "/camping-poi/service-worker.js",
+    "static/css/2.13d08433.chunk.css.map": "/camping-poi/static/css/2.13d08433.chunk.css.map",
+    "static/css/main.0fed2176.chunk.css.map": "/camping-poi/static/css/main.0fed2176.chunk.css.map",
+    "static/js/2.52232f42.chunk.js.LICENSE.txt": "/camping-poi/static/js/2.52232f42.chunk.js.LICENSE.txt",
+    "static/media/all.min.css": "/camping-poi/static/media/fa-solid-900.ee09ad75.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a3ae130d.js",
+    "static/css/2.13d08433.chunk.css",
+    "static/js/2.52232f42.chunk.js",
+    "static/css/main.0fed2176.chunk.css",
+    "static/js/main.dfdb54c5.chunk.js"
+  ]
+}

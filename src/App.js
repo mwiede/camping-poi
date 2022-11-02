@@ -28,7 +28,7 @@ function App() {
     position = map.leafletElement.getCenter();
   }
 
-  const cors_proxy = 'https://cors-anywhere.herokuapp.com/https://park4night.com';
+  const cors_proxy = 'https://proxy.cors.sh/https://park4night.com';
   const url = cors_proxy + `/services/V4/lieuxGetFilter.php?&latitude=${roundedPosition.lat}&longitude=${roundedPosition.lng}&context_user=guest&context_os=ANDROID&context_lang=en&langue_locale=en_EN&context_latitude=${roundedPosition.lat}&context_longitude=${roundedPosition.lng}&context_version=7.0.4&context_secondlang=it&context_thirdlang=de&isMonthPremium=false&isYearPremium=false&context_id_user=guest&os=ANDROID&apikey=guest`;
 
   const changeMapPosition = (position) => {

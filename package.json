@@ -9,7 +9,7 @@
     "@testing-library/user-event": "^7.2.1",
     "gh-pages": "^4.0.0",
     "leaflet": "^1.9.2",
-    "leaflet.locatecontrol": "^0.72.2",
+    "leaflet.locatecontrol": "^0.78.0",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-leaflet": "^2.8.0",

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
 import 'leaflet/dist/leaflet.css';
-import { Map, TileLayer, LayersControl, FeatureGroup } from 'react-leaflet';
+import { MapContainer, TileLayer, LayersControl, FeatureGroup } from 'react-leaflet';
 import LocateControl from './LocateControl'
 import MyMarker from './MyMarker';
 
@@ -15,7 +15,7 @@ function App() {
   const [zoom, setZoom] = useState(11);
   const [auswahl, setAuswahl] = useState('all');
 
-  const mapRef = useRef(<Map />)
+  const mapRef = useRef(<MapContainer />)
 
   const filteredMarkers = markers
     .filter(el => auswahl === 'all' || (auswahl === 'black' && el.eau_noire === '1') || (auswahl === 'grey' && el.eau_usee === '1'));
@@ -92,7 +92,7 @@ function App() {
 
   return (
     <>
-      <Map center={initialPosition} zoom={zoom} ref={mapRef}
+      <MapContainer center={initialPosition} zoom={zoom} ref={mapRef}
 
         onMoveend={(event) => {
           console.log(event.target.getCenter());
@@ -132,7 +132,7 @@ function App() {
 
         <LocateControl options={locateOptions} startDirectly />
 
-      </Map>
+      </MapContainer>
 
       {false && <>
         <form>

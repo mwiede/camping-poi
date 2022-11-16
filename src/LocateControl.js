@@ -1,27 +1,33 @@
-import { Component } from "react";
-import { withLeaflet } from "react-leaflet";
+import { useEffect, useRef } from "react";
+import { useMap } from "react-leaflet";
 import Locate from "leaflet.locatecontrol";
 
 import 'leaflet.locatecontrol/dist/L.Control.Locate.min.css'
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
-class LocateControl extends Component {
-  componentDidMount() {
-    const { options, startDirectly } = this.props;
-    const { map } = this.props.leaflet;
+const LocateControl = ({ options, startDirectly }) => {
 
-    const lc = new Locate(options);
-    lc.addTo(map);
+  const map = useMap();
+  const didInitRef = useRef(false);
 
-    if (startDirectly) {
-      // request location update and set location
-      lc.start();
+  useEffect(() => {
+
+    // In this case, whether we are mounting or remounting,
+    // we use a ref so that we only init once.
+    if (!didInitRef.current) {
+      didInitRef.current = true;
+      const lc = new Locate(options);
+      lc.addTo(map);
+
+      if (startDirectly) {
+        // request location update and set location
+        lc.start();
+      }
     }
-  }
+  }, [map, options, startDirectly]);
 
-  render() {
-    return null;
-  }
+  return null;
+
 }
 
-export default withLeaflet(LocateControl);
+export default LocateControl;

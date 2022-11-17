@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/camping-poi/static/css/main.dae23382.css",
-    "main.js": "/camping-poi/static/js/main.9f10e133.js",
+    "main.js": "/camping-poi/static/js/main.bb83e67e.js",
     "static/media/fa-solid-900.ttf": "/camping-poi/static/media/fa-solid-900.b1a653db79258eeccc5d.ttf",
     "static/media/fa-brands-400.ttf": "/camping-poi/static/media/fa-brands-400.450a5c898f0b184b968b.ttf",
     "static/media/fa-solid-900.woff2": "/camping-poi/static/media/fa-solid-900.41c0f706d8ce93933771.woff2",
@@ -12,10 +12,10 @@
     "static/media/fa-v4compatibility.woff2": "/camping-poi/static/media/fa-v4compatibility.4ee7f902d88f819e251c.woff2",
     "index.html": "/camping-poi/index.html",
     "main.dae23382.css.map": "/camping-poi/static/css/main.dae23382.css.map",
-    "main.9f10e133.js.map": "/camping-poi/static/js/main.9f10e133.js.map"
+    "main.bb83e67e.js.map": "/camping-poi/static/js/main.bb83e67e.js.map"
   },
   "entrypoints": [
     "static/css/main.dae23382.css",
-    "static/js/main.9f10e133.js"
+    "static/js/main.bb83e67e.js"
   ]
 }

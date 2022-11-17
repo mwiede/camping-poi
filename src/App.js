@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
 import 'leaflet/dist/leaflet.css';
-import { MapContainer, TileLayer, LayersControl, FeatureGroup } from 'react-leaflet';
+import { MapContainer, TileLayer, LayersControl, FeatureGroup, useMapEvents } from 'react-leaflet';
 import LocateControl from './LocateControl'
 import MyMarker from './MyMarker';
 
@@ -30,6 +30,25 @@ function App() {
 
   const cors_proxy = 'https://proxy-dk3f2my3aa-uc.a.run.app';
   const url = cors_proxy + `/https://park4night.com/services/V4/lieuxGetFilter.php?&latitude=${roundedPosition.lat}&longitude=${roundedPosition.lng}&context_user=guest&context_os=ANDROID&context_lang=en&langue_locale=en_EN&context_latitude=${roundedPosition.lat}&context_longitude=${roundedPosition.lng}&context_version=7.0.4&context_secondlang=it&context_thirdlang=de&isMonthPremium=false&isYearPremium=false&context_id_user=guest&os=ANDROID&apikey=guest`;
+
+  const LocationMarker = () => {
+    const mapFromEvents = useMapEvents({
+
+      locationfound: (location) => {
+        console.log('location found:', location)
+        setCurrentLocation(location.latlng);
+      },
+      zoomend: (event) => {
+        setZoom(mapFromEvents.getZoom())
+      },
+      moveend: (event) => {
+        console.log(event.target.getCenter());
+        changeMapPosition(event.target.getCenter());
+      }
+
+    })
+    return null;
+  }
 
   const changeMapPosition = (position) => {
 
@@ -72,10 +91,10 @@ function App() {
       .then(data => {
         setMarkers(data.lieux)
       })
-        .catch(error=>{
-            alert(`Could not load data: ${error.message}`);
-            console.log(error);
-        }
+      .catch(error => {
+        alert(`Could not load data: ${error.message}`);
+        console.log(error);
+      }
       );
     // dann marker in stat ablegen
 
@@ -92,22 +111,7 @@ function App() {
 
   return (
     <>
-      <MapContainer center={initialPosition} zoom={zoom} ref={mapRef}
-
-        onMoveend={(event) => {
-          console.log(event.target.getCenter());
-          changeMapPosition(event.target.getCenter());
-        }}
-
-        onzoomend={(event) => {
-          setZoom(event.target.getZoom())
-        }}
-
-        onLocationfound={(event) => {
-          setCurrentLocation(event.latlng);
-        }}
-      >
-
+      <MapContainer center={initialPosition} zoom={zoom} ref={mapRef}>
 
         <TileLayer
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -131,7 +135,7 @@ function App() {
         </LayersControl>
 
         <LocateControl options={locateOptions} startDirectly />
-
+        <LocationMarker />
       </MapContainer>
 
       {false && <>
@@ -150,7 +154,7 @@ function App() {
 
         <button onClick={centerMap}>center</button>
 
-      Zoom: {zoom}
+        Zoom: {zoom}
 
       </>}
 

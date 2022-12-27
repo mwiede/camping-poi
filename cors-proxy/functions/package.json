@@ -14,7 +14,7 @@
   "main": "index.js",
   "dependencies": {
     "cors-anywhere": "^0.4.4",
-    "firebase-admin": "^10.0.2",
+    "firebase-admin": "^11.4.1",
     "firebase-functions": "^4.0.2"
   },
   "devDependencies": {

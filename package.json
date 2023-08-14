@@ -7,7 +7,7 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
     "@testing-library/user-event": "^14.4.3",
-    "gh-pages": "^5.0.0",
+    "gh-pages": "^6.0.0",
     "leaflet": "^1.9.4",
     "leaflet.locatecontrol": "^0.79.0",
     "react": "^18.2.0",

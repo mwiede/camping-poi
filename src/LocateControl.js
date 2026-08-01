@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useMap } from "react-leaflet";
-import Locate from "leaflet.locatecontrol";
+import { LocateControl as Locate } from "leaflet.locatecontrol";
 
 import 'leaflet.locatecontrol/dist/L.Control.Locate.min.css'
 import '@fortawesome/fontawesome-free/css/all.min.css';

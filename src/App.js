@@ -28,8 +28,10 @@ function App() {
     position = map.leafletElement.getCenter();
   }
 
-  const cors_proxy = 'https://proxy-dk3f2my3aa-uc.a.run.app';
-  const url = cors_proxy + `/https://park4night.com/services/V4/lieuxGetFilter.php?&latitude=${roundedPosition.lat}&longitude=${roundedPosition.lng}&context_user=guest&context_os=ANDROID&context_lang=en&langue_locale=en_EN&context_latitude=${roundedPosition.lat}&context_longitude=${roundedPosition.lng}&context_version=7.0.4&context_secondlang=it&context_thirdlang=de&isMonthPremium=false&isYearPremium=false&context_id_user=guest&os=ANDROID&apikey=guest`;
+  const apiPath = `/services/V4/lieuxGetFilter.php?&latitude=${roundedPosition.lat}&longitude=${roundedPosition.lng}&context_user=guest&context_os=ANDROID&context_lang=en&langue_locale=en_EN&context_latitude=${roundedPosition.lat}&context_longitude=${roundedPosition.lng}&context_version=7.0.4&context_secondlang=it&context_thirdlang=de&isMonthPremium=false&isYearPremium=false&context_id_user=guest&os=ANDROID&apikey=guest`;
+  const url = process.env.NODE_ENV === 'development'
+    ? apiPath
+    : `https://proxy-dk3f2my3aa-uc.a.run.app/https://park4night.com${apiPath}`;
 
   const LocationMarker = () => {
     const mapFromEvents = useMapEvents({
